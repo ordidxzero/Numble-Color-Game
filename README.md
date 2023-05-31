@@ -6,7 +6,6 @@
 2. yarn berry
 3. ESBuild
 4. React
-5. MVP.css
 
 ## How to develop
 
