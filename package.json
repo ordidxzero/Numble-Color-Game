@@ -1,0 +1,27 @@
+{
+  "name": "numble-color-game",
+  "packageManager": "yarn@3.5.1",
+  "devDependencies": {
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "esbuild": "^0.17.19",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard-with-typescript": "latest",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "latest",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "dev": "npx live-server --port=5000 --entry-file=public/index.html & esbuild index.tsx --bundle --outdir=dist --watch",
+    "build": "esbuild index.tsx --bundle --minify --sourcemap --target=es2015 --outdir=dist"
+  }
+}
