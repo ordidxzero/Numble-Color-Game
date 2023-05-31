@@ -1,5 +1,13 @@
+import GameBoard from './GameBoard';
+import Header from './Header';
+
 const App = () => {
-  return <div>Hello Numble</div>;
+  return (
+    <>
+      <Header />
+      <GameBoard />
+    </>
+  );
 };
 
 export default App;
