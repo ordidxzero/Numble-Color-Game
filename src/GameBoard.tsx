@@ -1,17 +1,19 @@
 import { memo, useMemo } from 'react';
 
 interface GameBoardProps {
-  stage: number;
+  GAME_SIZE: number;
+  onAnswerBlockClick: () => void;
+  onWrongBlockClick: () => void;
 }
 
-const GameBoard = ({ stage }: GameBoardProps) => {
-  const SIZE = Math.round((stage + 0.5) / 2) + 1;
-  const BLOCK_COUNT = useMemo(() => Math.pow(SIZE, 2), [SIZE]);
+const GameBoard = ({ GAME_SIZE, onAnswerBlockClick, onWrongBlockClick }: GameBoardProps) => {
+  const BLOCK_COUNT = useMemo(() => Math.pow(GAME_SIZE, 2), [GAME_SIZE]);
+  const answerBlockIndex = useMemo(() => Math.floor(Math.random() * BLOCK_COUNT), [BLOCK_COUNT]);
   return (
     <main>
-      <div className="game-board" style={{ gridTemplateColumns: `repeat(${SIZE}, minmax(auto, 100px))` }}>
+      <div className="game-board" style={{ gridTemplateColumns: `repeat(${GAME_SIZE}, minmax(auto, 100px))` }}>
         {Array.from({ length: BLOCK_COUNT }, (_, i) => (
-          <div key={i}></div>
+          <div key={i} onClick={i === answerBlockIndex ? onAnswerBlockClick : onWrongBlockClick}></div>
         ))}
       </div>
     </main>
