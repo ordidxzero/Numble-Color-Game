@@ -32,7 +32,6 @@ main {
 
 div.game-board {
   display: grid;
-  grid-template-columns: repeat(16, minmax(auto, 100px));
   width: fit-content;
   max-width: 50%;
   gap: 6px;

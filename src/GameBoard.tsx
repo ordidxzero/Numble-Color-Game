@@ -1,10 +1,16 @@
-const SIZE = 16;
+import { memo, useMemo } from 'react';
 
-const GameBoard = () => {
+interface GameBoardProps {
+  stage: number;
+}
+
+const GameBoard = ({ stage }: GameBoardProps) => {
+  const SIZE = Math.round((stage + 0.5) / 2) + 1;
+  const BLOCK_COUNT = useMemo(() => Math.pow(SIZE, 2), [SIZE]);
   return (
-    <main className="flex items-center justify-center">
-      <div className="game-board">
-        {Array.from({ length: Math.pow(SIZE, 2) }, (_, i) => (
+    <main>
+      <div className="game-board" style={{ gridTemplateColumns: `repeat(${SIZE}, minmax(auto, 100px))` }}>
+        {Array.from({ length: BLOCK_COUNT }, (_, i) => (
           <div key={i}></div>
         ))}
       </div>
@@ -12,4 +18,4 @@ const GameBoard = () => {
   );
 };
 
-export default GameBoard;
+export default memo(GameBoard);
