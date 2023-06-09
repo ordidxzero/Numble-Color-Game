@@ -41,8 +41,6 @@ const App = () => {
     }
   }, [remainingTime]);
 
-  const GAME_SIZE = Math.round((stage + 0.5) / 2) + 1;
-
   const onAnswerBlockClick = useCallback(() => {
     const thisStageScore = Math.pow(stage, 3) * remainingTime;
     setScore(prevScore => prevScore + thisStageScore);
@@ -57,7 +55,7 @@ const App = () => {
   return (
     <>
       <Header stage={stage} remainingTime={remainingTime} score={score} />
-      <GameBoard GAME_SIZE={GAME_SIZE} onAnswerBlockClick={onAnswerBlockClick} onWrongBlockClick={onWrongBlockClick} />
+      <GameBoard stage={stage} onAnswerBlockClick={onAnswerBlockClick} onWrongBlockClick={onWrongBlockClick} />
     </>
   );
 };

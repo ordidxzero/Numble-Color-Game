@@ -72,6 +72,5 @@ div.game-board {
 
 div.game-board div {
   aspect-ratio: 1 / 1;
-  background-color: blue;
   border-radius: 4px;
 }
