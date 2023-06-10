@@ -1,3 +1,4 @@
+import { useState } from "react"
 import styled from "styled-components"
 
 export const GameBox = () => {
@@ -23,4 +24,5 @@ const GameSquare = styled.div`
     height: 200px;
     margin: 2px;
     background-color: blue;
+    cursor: pointer;
 `
