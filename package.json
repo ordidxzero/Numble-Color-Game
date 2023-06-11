@@ -21,7 +21,7 @@
     "react-dom": "^18.2.0"
   },
   "scripts": {
-    "dev": "npx live-server --port=5000 --entry-file=public/index.html & esbuild index.tsx --bundle --outdir=dist --watch",
-    "build": "esbuild index.tsx --bundle --minify --sourcemap --target=es2015 --outdir=dist"
+    "dev": "npx live-server --port=5000 --entry-file=public/index.html & esbuild index.tsx --bundle --outdir=public --watch",
+    "build": "esbuild index.tsx --bundle --minify --sourcemap --target=es2015 --outdir=public"
   }
 }

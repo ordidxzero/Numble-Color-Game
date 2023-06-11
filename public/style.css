@@ -32,7 +32,6 @@ main {
 
 div.game-board {
   display: grid;
-  grid-template-columns: repeat(16, minmax(auto, 100px));
   width: fit-content;
   max-width: 50%;
   gap: 6px;
@@ -73,6 +72,5 @@ div.game-board {
 
 div.game-board div {
   aspect-ratio: 1 / 1;
-  background-color: blue;
   border-radius: 4px;
 }
