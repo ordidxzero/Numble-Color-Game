@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header stageNumber={stageNumber} />
-      <GameBox />
+      <GameBox stageNumber={stageNumber} />
     </div>
   );
 }

@@ -1,14 +1,19 @@
 import { useState } from "react"
 import styled from "styled-components"
 
-export const GameBox = () => {
-    //Math.pow(Math.round((stage + 0.5) / 2) + 1, 2)
+interface ComponentProps {
+    stageNumber: number
+}
+
+export const GameBox = ({ stageNumber }: ComponentProps) => {
+    const squareCount = Math.pow(Math.round((stageNumber + 0.5) / 2) + 1, 2);
+    console.log(squareCount);
+
     return (
         <GameContainer>
-            <GameSquare></GameSquare>
-            <GameSquare></GameSquare>
-            <GameSquare></GameSquare>
-            <GameSquare></GameSquare>
+            {Array.from({ length: squareCount }, (_, i) => (
+                <GameSquare key={i} />
+            ))}
         </GameContainer>
     )
 }
